@@ -49,6 +49,8 @@ function filterTodo (todoList, filters) {
         document.querySelector('#todos').appendChild(todoElement)
     })
 
+
+    document.querySelector('#todoSummary').innerHTML = ''
     //checks how nmany todo items are left
     const unDoneTodos = filteredTodo.filter(function (todo) {
         return !todo.completed
@@ -56,7 +58,7 @@ function filterTodo (todoList, filters) {
 
     const incompleteTodo = document.createElement('h4')
     incompleteTodo.textContent = `You have ${unDoneTodos.length} todo's left`
-    document.querySelector('#todos').appendChild(incompleteTodo)
+    document.querySelector('#todoSummary').appendChild(incompleteTodo)
     
 }
 
@@ -68,6 +70,28 @@ document.querySelector('#search-query').addEventListener('input', function(e) {
     //rerenders todo list from filtered list
     filterTodo(todoList, filters)
 })
+
+
+document.querySelector('#inputForm').addEventListener('submit', function (e) {
+    e.preventDefault()
+    const newTodo = e.target.elements.inputTodo.value
+
+    todoList.push({
+        title: newTodo,
+        completed: false
+    })
+
+    // const newTodoEntry = document.createElement('p')
+    // newTodoEntry.textContent = newTodo
+    // document.querySelector('#todos').appendChild(newTodoEntry)
+
+    filterTodo(todoList, filters)
+
+    // console.log(todoList)
+
+    e.target.elements.inputTodo.value = ''
+})
+
 
 
 
@@ -91,64 +115,3 @@ document.querySelector('#search-query').addEventListener('input', function(e) {
 //         completed = completed + 1
 //     }
 //  })
-
-
-
-
-
-
-
-
-
-
-
-
-// const incompleteTodo = todoList.filter(function (todo) {
-//     return !todo.completed
-// })
-
-// const todoSummary = document.createElement('h4')
-// todoSummary.textContent = `You have ${incompleteTodo.length} todo's left`
-// document.querySelector('body').appendChild(todoSummary)
-
-
-
-// todoList.forEach(function(todo) {
-//     const todoItem = document.createElement('p')
-//     todoItem.textContent = `${todo.title}`
-//     document.querySelector('body').appendChild(todoItem)    
-//  })
-
-
-
-// document.querySelector('.remove-todo').addEventListener('click', function () {
-//     document.querySelectorAll('p').forEach(function (todo) {
-//         todo.remove()
-//     })
-// })
-
-// document.querySelector('#create-todo').addEventListener('click', function () {
-//     console.log('this button was clicked')
-// })
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const paragraphs = document.querySelectorAll('p')
-
-
-// paragraphs.forEach(function (paragraph) {
-//     if (paragraph.textContent.includes('the')) {
-//         paragraph.remove()
-//     } 
-// })
-
