@@ -13,11 +13,54 @@
  * @returns Array the converted temperatures in Fahrenheit
  */
 
-let celcuisTemp = [23, 34, 43, 80, 78, 12]
-let farenheitTemp = []
+// let celcuisTemp = [23, 34, 43, 80, 78, 12]
+// let farenheitTemp = []
 
-for (const index in celcuisTemp) {
-    let farenheit = (celcuisTemp[index] * 9/5) + 32
-    farenheitTemp.push(Math.trunc(farenheit))
+// for (const index in celcuisTemp) {
+//     let farenheit = (celcuisTemp[index] * 9/5) + 32
+//     farenheitTemp.push(Math.trunc(farenheit))
+// }
+// return farenheitTemp
+
+// const days = 'next day';
+
+
+
+//Grade Calculator
+// function gradeCalculator(studentScore, totalScore) {
+//     let percentage = (studentScore/totalScore) * 100
+//     let grade = ""
+
+//     if (percentage >= 70) {
+//         grade = "A"
+//     } else if (percentage >=60) {
+//         grade = "B"
+//     } else if (percentage >=50) {
+//         grade = "C"
+//     } else if (percentage >=40) {
+//         grade = "D"
+//     } else {
+//         grade = "F"
+//     }
+
+//     return `Your score is ${percentage} and your grade is ${grade}`;
+// }
+
+// let studentGrade = gradeCalculator(6, 20)
+// console.log(studentGrade);
+
+
+//OBJECTS
+let newMusicReslease = {
+    title: "...yesterday was about love",
+    artist: "Odinachi",
+    producer: "Retrosearth",
+    releaseDate: 2022
 }
-return farenheitTemp
+
+function displayRelease() {
+    return `${newMusicReslease.title} by ${newMusicReslease.artist} was released in 
+    ${newMusicReslease.releaseDate}`
+}
+
+console.log(displayRelease())
